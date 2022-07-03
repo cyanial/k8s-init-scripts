@@ -26,3 +26,20 @@ sudo apt-get update
 sudo apt-get install -y kubelet kubeadm kubectl
 sudo apt-mark hold kubelet kubeadm kubectl
 
+
+# Start k8s master 
+
+# IPADDR="10.0.0.10"
+IPADDR="192.168.31.128"
+NODENAME=$(hostname -s)
+
+sudo kubeadm init \
+--apiserver-advertise-address=$IPADDR \
+--apiserver-cert-extra-sans=$IPADDR \
+--pod-network-cidr=192.168.0.0/16 \
+--node-name=$NODENAME \
+--image-repository="registry.cn-hangzhou.aliyuncs.com/google_containers"
+# --control-plane-endpoint= \ for upgrade control-plane
+# --ignore-preflight-errors Swap
+
+

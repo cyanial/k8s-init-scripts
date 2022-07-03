@@ -1,5 +1,7 @@
 # acquire k8s cluster
 
+k8s v1.24 使用 containerd 代替 docker.
+
 - no proxy needed
 - env: ubuntu-20.04
 
