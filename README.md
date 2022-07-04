@@ -5,7 +5,7 @@ k8s v1.24 使用 containerd 代替 docker.
 - no proxy needed
 - env: ubuntu-20.04
 
-## 1. Docker
+## 1. Docker or Containerd
 
 [Official Sites](https://docs.docker.com/engine/install/ubuntu/)
 
