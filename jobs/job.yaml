@@ -1,0 +1,25 @@
+apiVersion: batch/v1 
+kind: Job 
+metadata:   
+  name: kubernetes-job-example 
+  # random name
+  # generateName: kube-job-  
+  labels:     
+    jobgroup: jobexample 
+spec:   
+  template:     
+    metadata:       
+      name: kubejob       
+      labels:         
+        jobgroup: jobexample     
+    spec:       
+      containers:       
+      - name: c         
+        image: devopscube/kubernetes-job-demo:latest         
+        args: ["100"]       
+      restartPolicy: OnFailure
+
+# kubectl apply -f job.yaml
+# kubectl get jobs
+# kubectl get po
+# kubectl logs kubernetes-job-example-bc7s9 -f
