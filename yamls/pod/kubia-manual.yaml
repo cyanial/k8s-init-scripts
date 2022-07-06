@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: kubia-manual
+spec:
+  containers:
+  - image: luksa/kubia
+    name: kubia
+    ports:
+    - containerPort: 8080
+      protocol: TCP
+
+# kubectl create -f kubia-manual.yaml
+# kubectl explain
+# http://kubernetes.io/docs/api
+
+# kubectl port-forward kubia-manual 8888:8080
